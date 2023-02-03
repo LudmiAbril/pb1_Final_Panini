@@ -30,7 +30,6 @@ public class Album {
 
 
 	public static void inicializarCodigosDeFiguritas() {
-		int contador=0;
 		int s=0;
 		for(int i=0; i<selecciones.length;i++) {
 			

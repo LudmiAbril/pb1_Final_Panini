@@ -168,19 +168,23 @@ public class Album {
 	}
 	
 	public double calcularPorcentajeCompletado() {
-		int figus=0;
-		for(int i=0;i<figuritasActuales.length;i++) {
-			if(figuritasActuales[i]!=null) {
-				figus++;
+		int figusTotales=0;
+		
+		for(int i=0;i<figuritasDisponibles.length;i++) {
+			for(int j=0;j<figuritasActuales.length;j++) {
+				if(figuritasDisponibles[i]==figuritasActuales[j]) {
+					figusTotales++;
+					break;
+				}
 			}
 		}
 		
-		double porcentaje=(figus*100)/704;
+		double porcentaje=(figusTotales*100)/704;
 		
 		/*
 		 * Debe calcular el porcentaje de figuritas del album que est� completo. Para esto se debe basar en la informaci de las figuritasDisponibles en relaci a las figuritasActuales que se tiene en el album.
 		 */
-		return Math.round(porcentaje*100.0)/100.0;
+		return Math.round(porcentaje*100)/100;
 	}
 
 	

@@ -78,7 +78,7 @@ public class Album {
 		Figurita sobre[] = new Figurita[5];
 		
 		for(int i=0;i<sobre.length;i++) {
-			sobre[i]=figuritasDisponibles[(int) (Math.random()*(704))];
+			sobre[i]=figuritasDisponibles[(int) (Math.random()*(704-0+1)+0)];
 		}
 		return sobre;
 	}
@@ -112,7 +112,7 @@ public class Album {
 		Figurita aux;
 		for(int i=0;i<figuritasActuales.length;i++) {
 			for(int j=0;j<figuritasActuales.length-1;j++) {
-				if(figuritasActuales[j].getCodigo().compareTo(figuritasActuales[j+1].getCodigo())<0) {
+				if(figuritasActuales[j]!=null && figuritasActuales[j+1]!=null && figuritasActuales[j].getCodigo().compareTo(figuritasActuales[j+1].getCodigo())<0) {
 					aux=figuritasActuales[j];
 					figuritasActuales[j]=figuritasActuales[j+1];
 					figuritasActuales[j+1]=aux;

@@ -34,15 +34,10 @@ public class Album {
 		int s=0;
 		for(int i=0; i<selecciones.length;i++) {
 			
-			for(int j=0;j<figuritasDisponibles.length;j++) {
-				contador++;
-				String codigo=selecciones[i].substring(0, 3).toUpperCase()+contador;
+			for(int j=1;j<23;j++){
+				String codigo=selecciones[i].substring(0, 3).toUpperCase()+j;
 				figuritasDisponibles[s]=new Figurita(codigo);
 				s++;
-				if(contador==22) {
-					contador=0;
-					break;
-				}
 			}
 		}
 		/*
